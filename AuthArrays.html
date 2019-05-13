@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Auth using Arrays - Tumo Masire</h2>
+
+<form onsubmit="myFunction()">
+  Name:<br>
+  <input type="text" name="firstname" placeholder="First Name" id='firstname'>
+  <br>
+  Surname:<br>
+  <input type="text" name="surname" placeholder="Last Name" id='surname'>
+  <br>
+  Age:<br>
+  <input type="text" name="age" placeholder="Age" id='age'>
+  <br>
+  Email:<br>
+  <input type="text" name="email" placeholder="Email Address" id='email'>
+  <br>
+  Password:<br>
+  <input type="text" name="password" placeholder="Password" id='password'>
+  <br>
+  Confirm Password:<br>
+  <input type="text" name="confirmPassword" placeholder="Confirm Password" id='confirmPassword'>
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<p>If you click the "Submit" button, the form-data will be sent to a page called "/actionX".</p>
+
+</body>
+<script>
+function myFunction() {
+  var loginDeets = [];
+  var pass1 = document.getElementById("password").value;
+  var pass2 = document.getElementById("confirmPassword").value;
+  if (pass1 === pass2 && pass1.length > 0 && pass1.length > 0) {
+    var name = document.getElementById("firstname").value;
+    var surname = document.getElementById("surname").value;
+    var age = document.getElementById("age").value;
+    var email = document.getElementById("email").value;
+    loginDeets = [name,surname,age,email,pass1,pass2];
+    alert("Success");
+  }
+  else if (pass1.length == 0 || pass2.length > 0) {
+    alert("Password's should have a length greater than 0. i.e Not left blank.");
+  }else{
+    alert("Passwords do not match.");
+  }
+
+}
+</script>
+</html>
