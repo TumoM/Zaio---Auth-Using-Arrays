@@ -103,7 +103,7 @@ function passMatch() {
   var loginDeets = [];
   var pass1 = document.getElementById("password").value;
   var pass2 = document.getElementById("confirmPassword").value;
-  if (pass1 === pass2 && pass1.length > 0 && pass1.length > 0) {
+  if (pass1 === pass2 && pass1.length > 0 && pass2.length > 0) {
     var name = document.getElementById("firstname").value;
     var surname = document.getElementById("surname").value;
     var age = document.getElementById("age").value;
@@ -111,7 +111,7 @@ function passMatch() {
     loginDeets = [name,surname,age,email,pass1,pass2];
     alert("Success");
   }
-  else if (pass1.length == 0 || pass2.length > 0) {
+  else if (pass1.length == 0 || pass2.length == 0) {
     alert("Password's should have a length greater than 0. i.e Not left blank.");
   }else{
     alert("Passwords do not match.");
